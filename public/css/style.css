@@ -1,3 +1,11 @@
 .btn-cadastro {
     margin-bottom: 10px;
 }
+
+.btn-salvar {
+    margin-top: 10px;
+}
+
+.fa-trash-o {
+    color: #ff0000;
+}

@@ -8,10 +8,10 @@
 
 @section('content')
     <a href="categorias/create">
-        <button class="btn btn-primary btn-flat btn-cadastro">Cadastrar Categoria</button>
+        <button class="btn btn-success btn-flat btn-cadastro">Cadastrar Categoria</button>
     </a>
     <div class="row">
-	    <div class="col-md-12">
+	    <div class="col-md-6">
 		    <table class="table table-striped box box-warning">
 			    <thead>
 				    <tr>
@@ -30,7 +30,7 @@
                         </td>
                         <td>
                             <a href="">
-                                <span class="fa fa-trash-o  fa-2x"></span>
+                                <span class="fa fa-trash-o fa-2x"></span>
                             <a>
                         </td>
                     </tr>
@@ -43,7 +43,7 @@
                         </td>
                         <td>
                             <a href="">
-                                <span class="fa fa-trash-o  fa-2x"></span>
+                                <span class="fa fa-trash-o fa-2x"></span>
                             <a>
                         </td>
                     </tr>
@@ -56,7 +56,7 @@
                         </td>
                         <td>
                             <a href="">
-                                <span class="fa fa-trash-o  fa-2x"></span>
+                                <span class="fa fa-trash-o fa-2x"></span>
                             <a>
                         </td>
                     </tr>

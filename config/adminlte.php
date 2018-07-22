@@ -111,7 +111,6 @@ return [
         [
             'text'        => 'Produtos',
             'url'         => 'produtos',
-            'icon'        => 'gamepad',
         ],
         [
             'text'        => 'Categorias',
