@@ -18,3 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('produtos')->group(function () {
+    Route::get('/', function () {
+        return view('produtos.lista');
+    });
+    Route::get('/create', function () {
+        return view('produtos.cadastro');
+    });
+});
+
+Route::prefix('categorias')->group(function () {
+    Route::get('/', function () {
+        return view('categorias.lista');
+    });
+    Route::get('/create', function () {
+        return view('categorias.cadastro');
+    });
+});
