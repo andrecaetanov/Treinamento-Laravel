@@ -8,22 +8,25 @@
 
 @section('content')
     <div class="row">
-        <form class="form" method="post" action="">
-            <div class="col-md-4">
-                <div class="box-body box box-warning">
+        <div class="col-md-4">
+            <div class="box-body box box-warning">
+                <form class="form" method="post" action="">
                     <label>Nome</label>
                     <input type="text" class="form-control" name="nome" value="">
                     <label>Categoria</label>
-                    <select class="form-control" name="categoria_id"></select>
+                    <select class="form-control" name="categoria_id">
+                        <option>Exemplo 1</option>
+                        <option>Exemplo 2</option>
+                    </select>
                     <label>Preço</label>
                     <div class="input-group">
                         <span class="input-group-addon">R$</span>
-                        <input type="text" class="form-control" name="nome" value="">
+                        <input type="text" step=".01" class="form-control" name="nome" value="">
                     </div>
                     <button type="submit" class="btn btn-success btn-flat btn-salvar">Salvar</button>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @stop
 

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <a href="categorias/create">
+    <a href="{{ route('categorias.create') }}">
         <button class="btn btn-success btn-flat btn-cadastro">Cadastrar Categoria</button>
     </a>
     <div class="row">
@@ -29,9 +29,11 @@
                             <a>
                         </td>
                         <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
+                            <form method="post" action="">
+                                <button class="btn-link" type="submit">
+                                    <span class="fa fa-trash-o fa-2x"></span>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -42,9 +44,11 @@
                             <a>
                         </td>
                         <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
+                            <form method="post" action="">
+                                <button class="btn-link" type="submit">
+                                    <span class="fa fa-trash-o fa-2x"></span>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     <tr>
@@ -55,9 +59,11 @@
                             <a>
                         </td>
                         <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
+                            <form method="post" action="">
+                                <button class="btn-link" type="submit">
+                                    <span class="fa fa-trash-o fa-2x"></span>
+                                </button>
+                            </form>
                         </td>
                     </tr>
 				</tbody>
