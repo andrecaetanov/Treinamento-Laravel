@@ -8,15 +8,21 @@
 
 @section('content')
     <div class="row">
-        <form class="form" method="post" action="">
-            <div class="col-md-4">
-                <div class="box-body box box-warning">
+        <div class="col-md-4">
+            <div class="box-body box box-warning">
+                @if(isset($categoria))
+                <form class="form" method="post" action="{{ route('categorias.update', $categoria) }}">
+                    @method('PUT')
+                @else
+                <form class="form" method="post" action="{{ route('categorias.store') }}">
+                @endif
+                    @csrf
                     <label>Nome</label>
-                    <input type="text" class="form-control" name="nome" value="">
+                    <input type="text" class="form-control" name="nome" value="{{ @$categoria->nome }}">
                     <button type="submit" class="btn btn-success btn-flat btn-salvar">Salvar</button>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @stop
 

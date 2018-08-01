@@ -8,22 +8,36 @@
 
 @section('content')
     <div class="row">
-        <form class="form" method="post" action="">
-            <div class="col-md-4">
-                <div class="box-body box box-warning">
+        <div class="col-md-4">
+             <div class="box-body box box-warning">
+                @if(isset($produto))
+                <form class="form" method="post" action="{{ route('produtos.update', $produto) }}">
+                    @method('PUT')
+                @else
+                <form class="form" method="post" action="{{ route('produtos.store') }}">
+                @endif
+                    @csrf
                     <label>Nome</label>
-                    <input type="text" class="form-control" name="nome" value="">
+                    <input type="text" class="form-control" name="nome" value="{{ @$produto->nome }}">
                     <label>Categoria</label>
-                    <select class="form-control" name="categoria_id"></select>
+                    <select class="form-control" name="categoria_id">
+                        @foreach ($categorias as $categoria)
+                            @if(@$produto->categoria->id === $categoria->id)
+                            <option selected value="{{ $categoria->id }}" name="categoria_id">{{ $categoria->nome }}</option>
+                            @else
+                            <option value="{{ $categoria->id }}" name="categoria_id">{{ $categoria->nome }}</option>
+                            @endif
+                        @endforeach
+                    </select>
                     <label>Preço</label>
                     <div class="input-group">
                         <span class="input-group-addon">R$</span>
-                        <input type="text" class="form-control" name="nome" value="">
+                        <input type="number" step=".01" class="form-control" name="preco" value="{{ @$produto->preco }}">
                     </div>
                     <button type="submit" class="btn btn-success btn-flat btn-salvar">Salvar</button>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 @stop
 

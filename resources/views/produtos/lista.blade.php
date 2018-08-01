@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <a href="produtos/create">
+    <a href="{{ route('produtos.create') }}">
         <button class="btn btn-success btn-flat btn-cadastro">Cadastrar Produto</button>
     </a>
     <div class="row">
@@ -23,51 +23,27 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>Exemplo</td>
-                        <td>R$ 100.00</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>Exemplo</td>
-                        <td>R$ 100.00</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>Exemplo</td>
-                        <td>R$ 100.00</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
+                    @foreach ($produtos as $produto)
+                        <tr>
+                            <td>{{ $produto->nome }}</td>
+                            <td>{{ $produto->categoria->nome }}</td>
+                            <td>{{ $produto->preco }}</td>
+                            <td>
+                                <a href="{{ route('produtos.edit', $produto) }}">
+                                    <span class="fa fa-edit fa-2x"></span>
+                                <a>
+                            </td>
+                            <td>
+                                <form method="post" action="{{ route('produtos.destroy', $produto) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn-link" type="submit">
+                                        <span class="fa fa-trash-o fa-2x"></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
 				</tbody>
 			</table>
 		</div>

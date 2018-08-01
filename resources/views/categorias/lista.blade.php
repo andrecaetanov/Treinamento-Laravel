@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <a href="categorias/create">
+    <a href="{{ route('categorias.create') }}">
         <button class="btn btn-success btn-flat btn-cadastro">Cadastrar Categoria</button>
     </a>
     <div class="row">
@@ -21,45 +21,25 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Exemplo</td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-edit fa-2x"></span>
-                            <a>
-                        </td>
-                        <td>
-                            <a href="">
-                                <span class="fa fa-trash-o fa-2x"></span>
-                            <a>
-                        </td>
-                    </tr>
+                    @foreach ($categorias as $categoria)
+                        <tr>
+                            <td>{{ $categoria->nome }}</td>
+                            <td>
+                                <a href="{{ route('categorias.edit', $categoria) }}">
+                                    <span class="fa fa-edit fa-2x"></span>
+                                <a>
+                            </td>
+                            <td>
+                                <form method="post" action="{{ route('categorias.destroy', $categoria) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn-link" type="submit">
+                                        <span class="fa fa-trash-o fa-2x"></span>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
 				</tbody>
 			</table>
 		</div>
