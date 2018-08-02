@@ -1,7 +1,9 @@
 # Treinamento-Laravel
 Sistema criado para ser usado no treinamento de Laravel da Code Computação Empresa Júnior da UFJF.
 
-Laravel 5.6 (versão utilizada no projeto): https://laravel.com/docs/5.6/
+Apresentação do treinamento: https://docs.google.com/presentation/d/17g8TBmiKKDgrk16XnvcsaZ9cVuK09ZPQblW9leZKheI/edit?usp=sharing
+
+Laravel 5.6 (versão utilizada no projeto): https://laravel.com/docs/5.6
 
 AdminLTE integrado com Laravel 5: https://github.com/jeroennoten/Laravel-AdminLTE
 
